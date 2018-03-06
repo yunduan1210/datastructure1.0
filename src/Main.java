@@ -1,20 +1,16 @@
 import com.yunduan.helper.GenerateArray;
-import com.yunduan.sort.HeapSort;
-import com.yunduan.sort.InsertSort;
-import com.yunduan.sort.MergeSort;
-import com.yunduan.sort.SelectSort;
+import com.yunduan.sort.*;
 import com.yunduan.test.TestSort;
 
 public class Main {
 
     public static void main(String[] args) {
-        int n = 100000;
+        int n = 1000000;
         GenerateArray generateArray = new GenerateArray();
         TestSort testSort = new TestSort();
 
         int[] testArrRandom = generateArray.generateRandomArray(n, 0, n);
         int[] testArrNearlyOrdered = generateArray.generateNearlyOrderedArray(n, 100);
-
 
         int[] testArrSelectSort = new int[n];
 
@@ -29,6 +25,8 @@ public class Main {
         int[] testArrHeapSort2 = new int[n];
         int[] testArrHeapSort3 = new int[n];
 
+        int[] testArrQuickSort = new int[n];
+        int[] testArrQuickSort2 = new int[n];
 
 
         testArrSelectSort = (int[]) testArrRandom.clone();
@@ -43,6 +41,9 @@ public class Main {
         testArrHeapSort1 = (int[]) testArrRandom.clone();
         testArrHeapSort2 = (int[]) testArrRandom.clone();
         testArrHeapSort3 = (int[]) testArrRandom.clone();
+
+        testArrQuickSort = (int[]) testArrRandom.clone();
+        testArrQuickSort2 = (int[]) testArrRandom.clone();
 
         testSort.testSelectSort("SelectSort", n, testArrSelectSort, new SelectSort());
         System.out.println(testSort.isSort(n, testArrSelectSort));
@@ -63,6 +64,11 @@ public class Main {
         System.out.println(testSort.isSort(n,testArrMergeSort));
         testSort.testMergeSort1("MergeSort1",n,testArrMergeSort1,new MergeSort());
         System.out.println(testSort.isSort(n,testArrMergeSort1));
+
+        testSort.testQuickSort("QuickSort",n,testArrQuickSort,new QuickSort());
+        System.out.println(testSort.isSort(n,testArrQuickSort));
+        testSort.testQuickSort("QuickSort2",n,testArrQuickSort2,new QuickSort());
+        System.out.println(testSort.isSort(n,testArrQuickSort2));
 
     }
 
