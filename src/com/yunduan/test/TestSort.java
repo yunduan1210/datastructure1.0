@@ -1,9 +1,6 @@
 package com.yunduan.test;
 
-import com.yunduan.sort.HeapSort;
-import com.yunduan.sort.InsertSort;
-import com.yunduan.sort.MergeSort;
-import com.yunduan.sort.SelectSort;
+import com.yunduan.sort.*;
 
 public class TestSort {
     //测试选择排序时间
@@ -76,6 +73,13 @@ public class TestSort {
         double start =System.currentTimeMillis();
         sort.mergeSort1(arr,n);
         double end = System.currentTimeMillis();
+        System.out.println(sortName+":"+((end-start)/1000)+"s");
+    }
+
+    public void testQuickSort(String sortName, int n, int[] arr, QuickSort sort){
+        double start = System.currentTimeMillis();
+        sort.quickSort(arr,n);
+        double end =System.currentTimeMillis();
         System.out.println(sortName+":"+((end-start)/1000)+"s");
     }
 
