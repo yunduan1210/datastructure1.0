@@ -83,6 +83,16 @@ public class TestSort {
         System.out.println(sortName+":"+((end-start)/1000)+"s");
     }
 
+
+    public void testQuickSort3Ways(String sortName, int n, int[] arr, QuickSort3Ways sort){
+        double start = System.currentTimeMillis();
+        sort.quickSort3Ways(arr,n);
+        double end =System.currentTimeMillis();
+        System.out.println(sortName+":"+((end-start)/1000)+"s");
+    }
+
+
+
     public boolean isSort(int n,int[] arr){
         for(int i = 1;i<n;i++){
             if(arr[i-1]>arr[i])

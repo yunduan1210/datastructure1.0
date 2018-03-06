@@ -27,6 +27,7 @@ public class Main {
 
         int[] testArrQuickSort = new int[n];
         int[] testArrQuickSort2 = new int[n];
+        int[] testArrQuickSort3Ways = new int[n];
 
 
         testArrSelectSort = (int[]) testArrRandom.clone();
@@ -44,21 +45,22 @@ public class Main {
 
         testArrQuickSort = (int[]) testArrRandom.clone();
         testArrQuickSort2 = (int[]) testArrRandom.clone();
+        testArrQuickSort3Ways = (int[]) testArrRandom.clone();
 
-        testSort.testSelectSort("SelectSort", n, testArrSelectSort, new SelectSort());
-        System.out.println(testSort.isSort(n, testArrSelectSort));
-        testSort.testInsertSort("InsertSort1", n, testArrInsertSort1, new InsertSort());
-        System.out.println(testSort.isSort(n, testArrInsertSort1));
-        testSort.testInsertSort2("InsertSort2", n, testArrInsertSort2, new InsertSort());
-        System.out.println(testSort.isSort(n, testArrInsertSort2));
-        testSort.testInsertSort3("InsertSort3", n, testArrInsertSort3, new InsertSort());
-        System.out.println(testSort.isSort(n, testArrInsertSort3));
-        testSort.testHeapSort1("HeapSort1", n, testArrHeapSort1, new HeapSort());
-        System.out.println(testSort.isSort(n, testArrHeapSort1));
-        testSort.testHeapSort2("HeapSort2", n, testArrHeapSort2, new HeapSort());
-        System.out.println(testSort.isSort(n, testArrHeapSort2));
-        testSort.testHeapSort3("HeapSort3", n, testArrHeapSort3, new HeapSort());
-        System.out.println(testSort.isSort(n, testArrHeapSort3));
+//        testSort.testSelectSort("SelectSort", n, testArrSelectSort, new SelectSort());
+//        System.out.println(testSort.isSort(n, testArrSelectSort));
+//        testSort.testInsertSort("InsertSort1", n, testArrInsertSort1, new InsertSort());
+//        System.out.println(testSort.isSort(n, testArrInsertSort1));
+//        testSort.testInsertSort2("InsertSort2", n, testArrInsertSort2, new InsertSort());
+//        System.out.println(testSort.isSort(n, testArrInsertSort2));
+//        testSort.testInsertSort3("InsertSort3", n, testArrInsertSort3, new InsertSort());
+//        System.out.println(testSort.isSort(n, testArrInsertSort3));
+//        testSort.testHeapSort1("HeapSort1", n, testArrHeapSort1, new HeapSort());
+//        System.out.println(testSort.isSort(n, testArrHeapSort1));
+//        testSort.testHeapSort2("HeapSort2", n, testArrHeapSort2, new HeapSort());
+//        System.out.println(testSort.isSort(n, testArrHeapSort2));
+//        testSort.testHeapSort3("HeapSort3", n, testArrHeapSort3, new HeapSort());
+//        System.out.println(testSort.isSort(n, testArrHeapSort3));
 
         testSort.testMergeSort("MergeSort",n,testArrMergeSort,new MergeSort());
         System.out.println(testSort.isSort(n,testArrMergeSort));
@@ -69,6 +71,8 @@ public class Main {
         System.out.println(testSort.isSort(n,testArrQuickSort));
         testSort.testQuickSort("QuickSort2",n,testArrQuickSort2,new QuickSort());
         System.out.println(testSort.isSort(n,testArrQuickSort2));
+        testSort.testQuickSort3Ways("QuickSort3Ways",n,testArrQuickSort3Ways,new QuickSort3Ways());
+        System.out.println(testSort.isSort(n,testArrQuickSort3Ways));
 
     }
 
