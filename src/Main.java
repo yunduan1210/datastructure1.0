@@ -1,6 +1,8 @@
 import com.yunduan.helper.GenerateArray;
 import com.yunduan.sort.*;
 import com.yunduan.test.TestSort;
+import com.yunduan.tree.BST;
+import com.yunduan.tree.BinarySearch;
 
 public class Main {
 
@@ -62,17 +64,26 @@ public class Main {
 //        testSort.testHeapSort3("HeapSort3", n, testArrHeapSort3, new HeapSort());
 //        System.out.println(testSort.isSort(n, testArrHeapSort3));
 
-        testSort.testMergeSort("MergeSort",n,testArrMergeSort,new MergeSort());
-        System.out.println(testSort.isSort(n,testArrMergeSort));
-        testSort.testMergeSort1("MergeSort1",n,testArrMergeSort1,new MergeSort());
-        System.out.println(testSort.isSort(n,testArrMergeSort1));
+//        testSort.testMergeSort("MergeSort",n,testArrMergeSort,new MergeSort());
+//        System.out.println(testSort.isSort(n,testArrMergeSort));
+//        testSort.testMergeSort1("MergeSort1",n,testArrMergeSort1,new MergeSort());
+//        System.out.println(testSort.isSort(n,testArrMergeSort1));
+//
+//        testSort.testQuickSort("QuickSort",n,testArrQuickSort,new QuickSort());
+//        System.out.println(testSort.isSort(n,testArrQuickSort));
+//        testSort.testQuickSort("QuickSort2",n,testArrQuickSort2,new QuickSort());
+//        System.out.println(testSort.isSort(n,testArrQuickSort2));
+//        testSort.testQuickSort3Ways("QuickSort3Ways",n,testArrQuickSort3Ways,new QuickSort3Ways());
+//        System.out.println(testSort.isSort(n,testArrQuickSort3Ways));
 
-        testSort.testQuickSort("QuickSort",n,testArrQuickSort,new QuickSort());
-        System.out.println(testSort.isSort(n,testArrQuickSort));
-        testSort.testQuickSort("QuickSort2",n,testArrQuickSort2,new QuickSort());
-        System.out.println(testSort.isSort(n,testArrQuickSort2));
-        testSort.testQuickSort3Ways("QuickSort3Ways",n,testArrQuickSort3Ways,new QuickSort3Ways());
-        System.out.println(testSort.isSort(n,testArrQuickSort3Ways));
+        BST bst = new BST();
+        bst.insert(4,44);
+        bst.insert(2,22);
+        bst.insert(3,33);
+        bst.insert(7,77);
+        bst.insert(5,55);
+
+
 
     }
 
