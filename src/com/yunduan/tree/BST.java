@@ -142,24 +142,84 @@ public class BST {
         removeMin(root);
     }
 
+    //删除最小节点
     private Node removeMin(Node node){
         if(node.getLeft()==null){
             Node rightNode = node.getRight();
             count--;
             return rightNode;
+        }else {
+            node.setLeft(removeMin(node.getLeft()));
+            return node;
         }
-        node.setLeft(removeMin(root.getLeft()));
-        return node;
+
     }
 
-    private Node maximum(Node node){
+    //删除最大值
+    public void removeMax(){
+        if(count==0){
+            return;
+        }
+        removeMax(root);
+    }
+
+    //删除二叉树中键值为key的节点
+    public void removeKey(int key) {
+         root = removeKey(root,key);
+    }
+
+    //递归定义删除键值为key的节点
+    private Node removeKey(Node root,int key){
+        if(root == null){
+            return null;
+        }
+        if( key < root.getKey()){
+            root.setLeft(removeKey(root.getLeft(),key));
+            return root;
+        }else if(key > root.getKey()){
+            root.setRight(removeKey(root.getRight(),key));
+            return root;
+        }else if(key == root.getKey()){
+            //左孩子为空
+            if(root.getLeft() == null){
+                Node rightNode = root.getRight();
+                count--;
+                return rightNode;
+            }
+            if(root.getRight() == null){
+                Node leftNode = root.getLeft();
+                count--;
+                return leftNode;
+            }
+            Node s = minimum(root.getRight());
+            s.setRight(removeMin(root.getRight()));
+            count--;
+        }
+        return null;
+    }
+
+    //删除最大节点
+    private Node removeMax(Node node){
+        if(node.getRight() == null){
+            Node nodeLeft = node.getLeft();
+            count--;
+            return nodeLeft;
+        }else {
+            node.setRight(removeMax(node.getRight()));
+            return node;
+        }
+    }
+
+    //寻找最大值
+    public Node maximum(Node node){
         if(node.getRight()==null){
             return node;
         }
         return maximum(node.getRight());
     }
 
-    private Node minimum(Node node) {
+    //寻找最小值
+    public Node minimum(Node node) {
         if (node.getLeft() == null) {
             return node;
         }

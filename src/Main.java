@@ -76,13 +76,6 @@ public class Main {
 //        testSort.testQuickSort3Ways("QuickSort3Ways",n,testArrQuickSort3Ways,new QuickSort3Ways());
 //        System.out.println(testSort.isSort(n,testArrQuickSort3Ways));
 
-        BST bst = new BST();
-        bst.insert(4,44);
-        bst.insert(2,22);
-        bst.insert(3,33);
-        bst.insert(7,77);
-        bst.insert(5,55);
-
 
 
     }
