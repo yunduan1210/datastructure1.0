@@ -1,9 +1,9 @@
 package com.yunduan.graph;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
-public class DenseGraph {
+
+public class DenseGraph implements Graph {
     private int n;
     private int m;
 
@@ -63,6 +63,18 @@ public class DenseGraph {
             }
         }
         return adjV;
+    }
+
+    //显示图的信息
+    public void show(){
+        for(int i = 0;i<n;i++) {
+            Iterable<Integer> sparseGraphIterator = adj(i);
+            System.out.print(i + ": ");
+            for (int a : sparseGraphIterator) {
+                System.out.print(a + "  ");
+            }
+            System.out.println();
+        }
     }
 }
 

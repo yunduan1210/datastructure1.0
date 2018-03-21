@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //邻接表实现稀疏图
-public class SparseGraph {
+public class SparseGraph implements Graph{
     private int n;   //节点数
     private int m;   //边数
     private boolean directed;
@@ -64,5 +64,16 @@ public class SparseGraph {
             adjV.add(g.get(v).get(i));
         }
         return adjV;
+    }
+
+    public void show(){
+        for(int i = 0;i<n;i++){
+            Iterable<Integer> sparseGraphIterator = adj(i);
+            System.out.print(i+": ");
+            for(int a:sparseGraphIterator){
+                System.out.print(a+"  ");
+            }
+            System.out.println();
+        }
     }
 }

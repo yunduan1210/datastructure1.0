@@ -6,7 +6,7 @@ import java.util.Random;
 public class GraphTestHelper {
 
 
-    public void testDenseGraph(int n,int m){
+    public Graph createRandomDenseGraph(int n,int m){
 
         Random random = new Random();
 
@@ -16,18 +16,10 @@ public class GraphTestHelper {
             int b = random.nextInt(n);
             denseGraph.addEdge(a,b);
         }
-
-        for(int v = 0;v<n;v++){
-            Iterable<Integer> denseGraphIterator = denseGraph.adj(v);
-            System.out.print(v+": ");
-            for(int a:denseGraphIterator){
-                System.out.print(a+"  ");
-            }
-            System.out.println();
-        }
+        return denseGraph;
     }
 
-    public void testSparseGraph(int n,int m){
+    public Graph createRandomSparseGraph(int n,int m){
 
         Random random = new Random();
 
@@ -37,14 +29,6 @@ public class GraphTestHelper {
             int b = random.nextInt(n);
             sparseGraph.addEdge(a,b);
         }
-
-        for(int v = 0;v<n;v++){
-            Iterable<Integer> sparseGraphIterator = sparseGraph.adj(v);
-            System.out.print(v+": ");
-            for(int a:sparseGraphIterator){
-                System.out.print(a+"  ");
-            }
-            System.out.println();
-        }
+        return sparseGraph;
     }
 }
